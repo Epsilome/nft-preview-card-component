@@ -70,8 +70,8 @@ h6 {
 body {
   background-color: hsl(217, 54%, 11%);
   font-size: 18px;
-  font-weight: 300, 400, 600;
   font-family: 'Outfit', sans-serif;
+  min-width: 375px;
 }
 
 .nft-grid {
@@ -136,29 +136,33 @@ hr {
 }
 
 .hovering:hover {
-color: hsl(178, 100%, 50%);
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
 
-.img-top {
-  display: none;
-  position: absolute;
-  background-color:hsl(178, 100%, 50%, 60%) ;
-  top: 50%;
-  left: 50%;
-}
-.img-top:hover{
-  z-index: 3;
-
-}
-.faded:hover{
- opacity: 0.5;
- mix-blend-mode: multiply;
-}
-.faded{
-  opacity: 1;
-  background-color: hsl(178, 100%, 50%,60%) ;
-}
-.isolate {
-  isolation: isolate; /* Without isolation, the background color will be taken into account */
+.wrap {
+  background-color: hsl(178, 100%, 50%);
   position: relative;
+}
+
+.faded:hover {
+  opacity: 0.3;
+}
+
+.icon{
+  background-image: url("/images/icon-view.svg");
+  content: '';
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.wrap:hover .icon{
+  display: block;
+}
+.wrap:hover{
+  cursor: pointer;
 }
